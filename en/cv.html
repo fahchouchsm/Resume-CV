@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammed Fahchouch — Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Mono', monospace; background: #f0f4f8; color: #0f1f3d; }
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+    .accent { color: #2563eb; }
+    .tag {
+      display: inline-block;
+      background: #1e3a5f;
+      color: #e8f0fe;
+      font-size: 10px;
+      font-family: 'DM Mono', monospace;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin: 2px 2px 2px 0;
+      letter-spacing: 0.04em;
+    }
+    .tag.light {
+      background: transparent;
+      border: 1px solid #2563eb;
+      color: #1e3a5f;
+    }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #2563eb;
+      border-left: 3px solid #2563eb;
+      padding-left: 8px;
+      margin-bottom: 18px;
+    }
+    .divider { border: none; border-top: 1px solid #c5d3e8; margin: 28px 0; }
+    .exp-line {
+      border-left: 2px solid #c5d3e8;
+      padding-left: 16px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .exp-line::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: #2563eb;
+      border-radius: 50%;
+      position: absolute;
+      left: -5px; top: 6px;
+    }
+    .project-card {
+      border: 1px solid #c5d3e8;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      background: #ffffff;
+      border-radius: 4px;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover { box-shadow: 4px 4px 0 #1e3a5f; }
+    @media print {
+      body { background: white; }
+      .project-card:hover { box-shadow: none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+<div class="max-w-4xl mx-auto px-8 py-12">
+  <!-- HEADER -->
+  <header class="mb-10">
+    <div class="flex flex-col gap-4">
+      <!-- Top row: image + name + contact -->
+      <div class="flex items-center gap-6 flex-wrap">
+        <!-- Image -->
+        <div class="flex-shrink-0 w-28 h-28 overflow-hidden rounded-md">
+          <img id="photo" src="me.png" alt="Mohammed Fahchouch" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Name block -->
+        <div class="flex-1 min-w-0 flex items-center h-28">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-gray-400 mb-1 font-mono">
+              Software Engineer
+            </p>
+            <h1 class="text-2xl font-extrabold leading-tight tracking-tight text-gray-800" style="transform: scaleY(1.4); transform-origin: top left;">
+              <div class="flex-col">
+                <div class="text-blue-600">Fahchouch</div>
+                <div>Mohammed</div>
+              </div>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Contact: far right -->
+        <div class="flex flex-col justify-center gap-2 text-sm text-gray-500">
+          <a href="mailto:fahchouchsm@gmail.com" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span>fahchouchsm@gmail.com</span>
+          </a>
+          <!--          <a href="https://example.com" class="flex items-center gap-2 hover:text-blue-600 transition-colors">-->
+          <!--            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
+          <!--              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/>-->
+          <!--            </svg>-->
+          <!--            example.com-->
+          <!--          </a>-->
+          <a href="https://www.linkedin.com/in/fahchchouch-mohammed-63b311375/" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Fahchouch Mohammed
+          </a>
+          <a href="https://github.com/fahchouchsm" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            @fahchouchsm
+          </a>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-500 w-full leading-relaxed">
+        Final-year Engineering student @ EHEI Oujda &middot; 3+ yrs building full-stack systems with TypeScript, Java, .NET & more. Linux enthusiast.
+      </p>
+    </div>
+  </header>
+  <hr class="divider"/>
+
+  <!-- TWO-COLUMN LAYOUT -->
+  <div class="grid grid-cols-3 gap-10">
+
+    <!-- LEFT -->
+    <div class="col-span-1 space-y-8">
+      <section>
+        <p class="section-label">Skills</p>
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Front-End</p>
+          <div><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TailwindCSS</span><span class="tag">Zustand</span><span class="tag">React Query</span></div>
+        </div>
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Back-End</p>
+          <div><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Express</span><span class="tag">Spring Boot</span><span class="tag">ASP.NET Core</span><span class="tag">Symfony</span></div>
+        </div>
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Databases & ORM</p>
+          <div><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Prisma</span><span class="tag">JPA</span><span class="tag">Doctrine</span></div>
+        </div>
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">DevOps & Tools</p>
+          <div><span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Git</span></div>
+        </div>
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Languages</p>
+          <div><span class="tag light">TypeScript</span><span class="tag light">JavaScript</span><span class="tag light">Java</span><span class="tag light">C#</span><span class="tag light">PHP</span><span class="tag light">Python</span><span class="tag light">C/C++</span></div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Other</p>
+          <div><span class="tag">WebSockets</span><span class="tag">JWT</span><span class="tag">REST</span><span class="tag">tRPC</span><span class="tag">Stripe</span><span class="tag">Electron</span></div>
+        </div>
+      </section>
+
+      <hr class="divider"/>
+
+      <section>
+        <p class="section-label">Education</p>
+        <div class="exp-line">
+          <p class="text-xs text-gray-400">2024 &ndash; 2027</p>
+          <p class="font-bold text-sm">EHEI Oujda</p>
+          <p class="text-xs text-gray-600">Cycle Ingénieur — 2nd Year</p>
+          <p class="text-xs text-gray-400 mt-1">C++, Java, MySQL, .NET, Software Eng.</p>
+        </div>
+        <div class="exp-line">
+          <p class="text-xs text-gray-400">Prior</p>
+          <p class="font-bold text-sm">BTS — Technicien Spécialisé</p>
+          <p class="text-xs text-gray-400 mt-1">Web Dev, Java, C, SQL, Algorithms</p>
+        </div>
+        <div class="exp-line">
+          <p class="text-xs text-gray-400">Ongoing</p>
+          <p class="font-bold text-sm">Self-Study</p>
+          <p class="text-xs text-gray-400 mt-1">Udemy · Open Source · Architecture</p>
+        </div>
+      </section>
+
+      <hr class="divider"/>
+
+      <section>
+        <p class="section-label">Languages</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span>Arabic</span><span class="text-gray-400">Native</span></div>
+          <div class="flex justify-between"><span>English</span><span class="accent font-semibold">C1</span></div>
+          <div class="flex justify-between"><span>French</span><span class="accent font-semibold">B2</span></div>
+          <div class="flex justify-between"><span>German</span><span class="text-gray-400">B1</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-span-2 space-y-8">
+      <section>
+        <p class="section-label">Experience</p>
+        <div class="exp-line">
+          <div class="flex items-start justify-between flex-wrap gap-1 mb-1">
+            <p class="font-bold">RADEO Oujda</p>
+            <span class="text-xs text-gray-400">Internship</span>
+          </div>
+          <p class="text-xs accent mb-2">MySQL Compass — Desktop DB Client</p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">
+            Built a full desktop database client inspired by MongoDB Compass but for MySQL. Embedded Node.js server communicates with MySQL and exposes a local API consumed by an Electron + React/TailwindCSS frontend. Features visual schema browser, live SQL editor, and multi-format export.
+          </p>
+          <div>
+            <span class="tag">Electron</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="exp-line">
+          <div class="flex items-start justify-between flex-wrap gap-1 mb-1">
+            <p class="font-bold">Conseil Régional de l'Oriental</p>
+            <span class="text-xs text-gray-400">Internship</span>
+          </div>
+          <p class="text-xs accent mb-2">Internship Management Platform</p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">
+            Built a full-stack web app to manage internships, students, supervisors, and reports.
+            MVC architecture with Express routers, EJS views, middleware-based auth, file uploads, and a relational MySQL schema.
+          </p>
+          <div>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">EJS</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="exp-line">
+          <div class="flex items-start justify-between flex-wrap gap-1 mb-1">
+            <p class="font-bold">BNB Call Center</p>
+            <span class="text-xs text-gray-400">Internship</span>
+          </div>
+          <p class="text-xs accent mb-2">IT Support & Operations</p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">
+            Assisted the technical team in daily operations, monitored internal systems, and coordinated data flow between staff and the company's server application.
+          </p>
+        </div>
+      </section>
+
+      <hr class="divider"/>
+
+      <section>
+        <p class="section-label">Projects</p>
+
+        <div class="space-y-3 mt-2">
+
+          <div class="project-card">
+            <p class="font-bold text-sm">AuthGateway — Microservices Auth Gateway</p>
+            <span class="text-xs text-gray-400">Spring Boot · Java</span>
+            <p class="text-xs text-gray-500 mt-1 mb-2">
+              Centralized authentication gateway acting as the single entry point for microservices communication.
+              Validates RS256-signed JWTs, enforces RBAC, injects user claims into downstream requests,
+              and supports JWKS key rotation. Dockerized with Docker Compose.
+            </p>
+            <div>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Java</span>
+              <span class="tag">JWT RS256</span>
+              <span class="tag">JWKS</span>
+              <span class="tag">RBAC</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <p class="font-bold text-sm">FixMyCity — Civic Issue Reporting API</p>
+            <span class="text-xs text-gray-400">ASP.NET Core REST API</span>
+            <p class="text-xs text-gray-500 mt-1 mb-2">
+              Citizens report urban infrastructure issues (e.g. road damage) via a REST API that routes them
+              to the responsible authority. Integrates with an authentication gateway, fully Dockerized with Docker Compose.
+            </p>
+            <div>
+              <span class="tag">ASP.NET Core</span>
+              <span class="tag">C#</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Auth Gateway</span>
+              <span class="tag">REST</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <p class="font-bold text-sm">Full-Stack TypeScript Projects</p>
+            <span class="text-xs text-gray-400">E-Commerce Platform & Freelance Marketplace</span>
+            <p class="text-xs text-gray-500 mt-1 mb-2">
+              Built two production-scale apps: an online store with Stripe payments, cart & order management,
+              and admin back-office — and a real-time freelance platform with WebSocket job matching and user ratings.
+              Both TypeScript end-to-end with React & TailwindCSS on the front.
+            </p>
+            <div>
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">TailwindCSS</span>
+              <span class="tag">WebSockets</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Stripe</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <p class="font-bold text-sm">MySQL Compass</p>
+            <span class="text-xs text-gray-400">Desktop DB Client</span>
+            <p class="text-xs text-gray-500 mt-1 mb-2">
+              Electron-based database client with an embedded Node.js server handling MySQL communication via a local API bridge. Built with React & TailwindCSS frontend, featuring a visual schema browser, live SQL editor, and multi-format export (CSV, JSON...).
+            </p>
+            <div>
+              <span class="tag">Electron</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">React</span>
+              <span class="tag">TailwindCSS</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">REST</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>
